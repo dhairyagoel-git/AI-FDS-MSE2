@@ -1,0 +1,163 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Auth pages */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.auth-box h2 { font-size: 28px; margin-bottom: 6px; color: #1a1a2e; }
+.auth-box h3 { font-size: 18px; margin-bottom: 20px; color: #666; }
+
+.auth-box form { display: flex; flex-direction: column; gap: 12px; }
+
+input, select, textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus { border-color: #4f46e5; }
+
+button {
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover { background: #3730a3; }
+
+.auth-box p { margin-top: 16px; color: #666; }
+.auth-box a { color: #4f46e5; text-decoration: none; font-weight: 600; }
+
+.error {
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  margin-bottom: 12px;
+}
+
+/* Dashboard */
+.dashboard { min-height: 100vh; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a2e;
+  color: white;
+  padding: 14px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h1 { font-size: 22px; }
+.navbar div { display: flex; align-items: center; gap: 16px; }
+.navbar span { font-size: 14px; opacity: 0.8; }
+
+.btn-logout {
+  background: #dc2626;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-logout:hover { background: #b91c1c; }
+
+.content { padding: 24px; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 { margin-bottom: 16px; font-size: 18px; color: #1a1a2e; }
+
+.item-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.item-form input, .item-form select { width: 100%; }
+.item-form input:first-child, .item-form input:last-child { grid-column: 1 / -1; }
+
+.form-btns { grid-column: 1 / -1; display: flex; gap: 10px; }
+.form-btns button:last-child { background: #6b7280; }
+.form-btns button:last-child:hover { background: #4b5563; }
+
+.search-form { display: flex; gap: 10px; }
+.search-form input { flex: 1; }
+.search-form button:last-child { background: #6b7280; }
+.search-form button:last-child:hover { background: #4b5563; }
+
+.items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+
+.item-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-card.lost { border-left: 4px solid #dc2626; }
+.item-card.found { border-left: 4px solid #16a34a; }
+
+.item-header { display: flex; justify-content: space-between; align-items: center; }
+.item-header strong { font-size: 16px; }
+
+.badge {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-lost { background: #fef2f2; color: #dc2626; }
+.badge-found { background: #f0fdf4; color: #16a34a; }
+
+.item-card p { font-size: 13px; color: #555; }
+
+.item-actions { display: flex; gap: 8px; margin-top: 8px; }
+
+.btn-edit { background: #f59e0b; padding: 6px 14px; font-size: 13px; }
+.btn-edit:hover { background: #d97706; }
+
+.btn-delete { background: #dc2626; padding: 6px 14px; font-size: 13px; }
+.btn-delete:hover { background: #b91c1c; }
+
+@media (max-width: 600px) {
+  .item-form { grid-template-columns: 1fr; }
+  .item-form input:first-child, .item-form input:last-child { grid-column: auto; }
+  .search-form { flex-direction: column; }
+  .content { padding: 16px; }
+}
